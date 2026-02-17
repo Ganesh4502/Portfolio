@@ -25,15 +25,15 @@ export const projects: Project[] = [
         shortDescription: "A cinematic 3D car animation focusing on realism and complex motion.",
         fullDescription: "Developed a realistic car animation in Blender, utilizing advanced geometry nodes and procedural materials. Focused on achieving cinematic motion and lighting to bring the vehicle to life in a dynamic environment.",
         tools: ["Blender", "Geometry Nodes", "Procedural Materials", "Animation"],
-        image: "public/Car_Animation/Raw.png",
+        image: `${import.meta.env.BASE_URL}Car_Animation/Raw.png`,
         imageGradient: "from-slate-800 via-gray-900 to-black",
         mediaType: "video",
         mediaUrl: "public/Car_Animation/Render.mp4",
         gallery: [
-            { url: "public/Car_Animation/Raw.png", caption: "Raw Image" },
-            { url: "public/Car_Animation/Geomentry_nodes.png", caption: "Geometry Nodes Setup" },
-            { url: "public/Car_Animation/Material.png", caption: "Material Setup" },
-            { url: "public/Car_Animation/Wireframe.png", caption: "Wireframe View" }
+            { url: `${import.meta.env.BASE_URL}Car_Animation/Raw.png`, caption: "Raw Image" },
+            { url: `${import.meta.env.BASE_URL}/Car_Animation/Geomentry_nodes.png`, caption: "Geometry Nodes Setup" },
+            { url: `${import.meta.env.BASE_URL}/Car_Animation/Material.png`, caption: "Material Setup" },
+            { url: `${import.meta.env.BASE_URL}/Car_Animation/Wireframe.png`, caption: "Wireframe View" }
         ],
         featured: true
     },
