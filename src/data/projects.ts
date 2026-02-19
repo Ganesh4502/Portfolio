@@ -47,6 +47,8 @@ export const projects: Project[] = [
         image: `${import.meta.env.BASE_URL}Hacker_Environment/Rendered.png`, // Rendered Image Main
         imageGradient: "from-cyan-900 via-blue-900 to-black",
         mediaType: "gallery",
+        mediaUrl: `${import.meta.env.BASE_URL}Hacker_Environment/Rendered.png`,        
+
         gallery: [
             { url: `${import.meta.env.BASE_URL}Hacker_Environment/Rendered.png`, caption: "Rendered Image" },
             { url: `${import.meta.env.BASE_URL}Hacker_Environment/Raw.png`, caption: "Raw Image" },
