@@ -28,7 +28,7 @@ const NeonButton = ({ children, variant = 'primary', className, glow = true, ...
                 glowStyles,
                 className
             )}
-            {...props as any}
+            {...(props as React.ComponentProps<typeof motion.button>)}
         >
             {children}
             {/* Glitch/Scanline effect could be added here */}

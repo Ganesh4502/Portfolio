@@ -9,10 +9,10 @@ const categories = ["All", "3D", "Video", "Design", "Web"];
 
 const Projects = () => {
     const [activeCategory, setActiveCategory] = useState("All");
-    const [selectedProject, setSelectedProject] = useState<any>(null);
+    const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = (project: any) => {
+    const openModal = (project: typeof projects[0]) => {
         setSelectedProject(project);
         setIsModalOpen(true);
     };
@@ -64,7 +64,7 @@ const Projects = () => {
                                 className="cursor-pointer"
                             >
                                 <GlassCard className="h-full group hover:border-primary/50 transition-colors">
-                                    {project.image.startsWith('/') || project.image.startsWith('http') ? (
+                                    {project.image.startsWith('/') || project.image.startsWith('http') || project.image.startsWith('./') ? (
                                         <div className="h-40 w-full rounded-lg mb-4 overflow-hidden relative">
                                             <img
                                                 src={project.image}

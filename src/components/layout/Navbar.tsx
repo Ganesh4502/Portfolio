@@ -37,7 +37,7 @@ const Navbar = () => {
                 <div className="container mx-auto px-4 flex justify-between items-center">
                     <a href="#" className="text-xl md:text-2xl font-bold font-mono tracking-tighter group">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Personal</span>
-                        <span className="text-secondary group-hover:text-primary transition-colors ml-2">Portfolioo</span>
+                        <span className="text-secondary group-hover:text-primary transition-colors ml-2">Portfolio</span>
                     </a>
 
                     {/* Desktop Nav */}

@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
 import NeonButton from '../ui/NeonButton';
+import HeroBackground from '../3d/HeroBackground';
+
+const roles = ["Designing Enthusiast", "Creative Technologist", "3D Environment Artist", "Frontend Developer"];
 
 const Hero = () => {
     const [textIndex, setTextIndex] = useState(0);
-    const roles = ["Designing Enthusiast", "Creative Technologist", "3D Environment Artist", "Frontend Developer"];
 
     // Rotating text effect
     useEffect(() => {
@@ -17,7 +19,7 @@ const Hero = () => {
 
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
-            {/* <HeroBackground /> */}
+            <HeroBackground />
             <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-gray-900 to-black">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary via-background to-background" />
             </div>

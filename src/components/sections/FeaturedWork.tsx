@@ -8,10 +8,10 @@ import ProjectDetailsModal from '../ui/ProjectDetailsModal';
 
 const FeaturedWork = () => {
     const featuredProjects = projects.filter(p => p.featured);
-    const [selectedProject, setSelectedProject] = useState<any>(null);
+    const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = (project: any) => {
+    const openModal = (project: typeof projects[0]) => {
         setSelectedProject(project);
         setIsModalOpen(true);
     };
@@ -49,7 +49,7 @@ const FeaturedWork = () => {
                                     >
                                         <source src={project.mediaUrl} type="video/mp4" />
                                     </video>
-                                ) : project.image.startsWith('/') || project.image.startsWith('http') ? (
+                                ) : project.image.startsWith('/') || project.image.startsWith('http') || project.image.startsWith('./') ? (
                                     <>
                                         <img
                                             src={project.image}

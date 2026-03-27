@@ -21,7 +21,7 @@ const GlassCard = ({ children, className, hoverEffect = true, ...props }: GlassC
                 "transition-colors duration-300",
                 className
             )}
-            {...props as any}
+            {...(props as React.ComponentProps<typeof motion.div>)}
         >
             {children}
         </motion.div>
