@@ -67,6 +67,7 @@ const Projects = () => {
                                     {project.image.startsWith('/') || project.image.startsWith('http') || project.image.startsWith('./') ? (
                                         <div className="h-40 w-full rounded-lg mb-4 overflow-hidden relative">
                                             <img
+                                                loading="lazy"
                                                 src={project.image}
                                                 alt={project.title}
                                                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"

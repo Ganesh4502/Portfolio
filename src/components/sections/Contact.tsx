@@ -21,39 +21,34 @@ const Contact = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        const ACCESS_KEY = "f6ddad55-4aed-48f9-b6f2-a0f440e85f36"; // User needs to replace this
-
-
+        const FORMSPREE_ID = "YOUR_FORMSPREE_ID"; // IMPORTANT: Replace with your actual Formspree ID (e.g., 'xabcde')
 
         setIsSubmitting(true);
 
-        const formPayload = {
-            ...formData,
-            access_key: ACCESS_KEY,
-            subject: `New Portfolio Message from ${formData.name}`,
-            from_name: "Personal Portfolio"
-        };
-
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
+            const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
-                body: JSON.stringify(formPayload),
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message
+                }),
             });
 
             const result = await response.json();
 
-            if (result.success) {
+            if (response.ok) {
                 setIsSuccess(true);
                 setFormData({ name: '', email: '', message: '' });
                 // Reset success message after 5 seconds
                 setTimeout(() => setIsSuccess(false), 5000);
             } else {
-                console.error("Web3Forms Error:", result);
-                alert(result.message || "Something went wrong. Please check your Access Key or try again later.");
+                console.error("Formspree Error:", result);
+                alert(result.error || "Something went wrong. Please check your Formspree ID.");
             }
         } catch (error) {
             console.error("Error submitting form:", error);

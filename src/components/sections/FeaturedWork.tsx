@@ -52,6 +52,7 @@ const FeaturedWork = () => {
                                 ) : project.image.startsWith('/') || project.image.startsWith('http') || project.image.startsWith('./') ? (
                                     <>
                                         <img
+                                            loading="lazy"
                                             src={project.image}
                                             alt={project.title}
                                             className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
